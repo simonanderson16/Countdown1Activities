@@ -12,7 +12,24 @@ const bookList = [
     { title: "The Great Gatsby", author: "F. Scott Fitzgerald" },
     { title: "Moby Dick", author: "Herman Melville" },
   ];
-  
+
+const addBook = (title, author) => bookList.push({title: title, author: author});
+
+const removeBook = (title) => {
+    for(let i = 0; i < bookList.length; i++) {
+        if(bookList[i].title === title) {
+            delete bookList[i];
+        }
+    }
+}
+
+const listBooks = () => bookList.forEach(book => console.log(book.title));
+
+addBook("test1", "author1")
+listBooks();
+removeBook("Ulysses")
+listBooks();
+
   /* Intermediate Challenge */
   
   /* (4) Write a one-line arrow function that takes in a number and returns a string stating whether the
